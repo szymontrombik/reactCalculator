@@ -24,6 +24,10 @@ Button.keypad-button-submit {
   background-color: green;
 }
 
+Button.operation {
+  background-color: lightcoral;
+}
+
 Input.display-input {
   height: 50px;
 }

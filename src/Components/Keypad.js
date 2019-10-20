@@ -20,7 +20,7 @@ class Keypad extends Component {
 
             children.push(
                 <td>
-                    <Button className="keypad-button" key={operations[i]}>{operations[i]}</Button>
+                    <Button className="keypad-button operation" key={operations[i]}>{operations[i]}</Button>
                 </td>)
 
             table.push(<tr>{children}</tr>)
@@ -35,7 +35,7 @@ class Keypad extends Component {
                     <Button className="keypad-button" key="0">0</Button>
                 </td>
                 <td>
-                    <Button className="keypad-button" key={operations[i]}>{operations[i]}</Button>
+                    <Button className="keypad-button operation" key={operations[i]}>{operations[i]}</Button>
                 </td>
             </tr>)
 
