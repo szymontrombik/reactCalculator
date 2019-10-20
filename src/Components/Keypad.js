@@ -5,22 +5,22 @@ class Keypad extends Component {
     createTable = () => {
         let table = [];
         let number = 1;
-        let operations = [ "+", "-", "*", "/"]
-        let i= 0;
+        let operations = ["+", "-", "*", "/"]
+        let i = 0;
 
         for (i; i < 3; i++) {
             let children = [];
             for (let j = 0; j < 3; j++) {
                 children.push(
                     <td>
-                        <Button style={{height: "50px", width: "50px"}} key={number}>{number}</Button>
+                        <Button className="keypad-button" key={number}>{number}</Button>
                     </td>)
                 number++;
             }
 
             children.push(
                 <td>
-                    <Button style={{height: "50px", width: "50px"}} key={operations[i]}>{operations[i]}</Button>
+                    <Button className="keypad-button" key={operations[i]}>{operations[i]}</Button>
                 </td>)
 
             table.push(<tr>{children}</tr>)
@@ -28,13 +28,14 @@ class Keypad extends Component {
 
         table.push(
             <tr>
-                <td />
-                <td>
-                    <Button style={{height: "50px", width: "50px"}} key="0">0</Button>
+                <td colSpan="2">
+                    <Button className="keypad-button-submit">=</Button>
                 </td>
-                <td />
                 <td>
-                    <Button style={{height: "50px", width: "50px"}} key={operations[i]}>{operations[i]}</Button>
+                    <Button className="keypad-button" key="0">0</Button>
+                </td>
+                <td>
+                    <Button className="keypad-button" key={operations[i]}>{operations[i]}</Button>
                 </td>
             </tr>)
 
@@ -42,9 +43,7 @@ class Keypad extends Component {
     }
 
     render() {
-        return <table>
-            {this.createTable()}
-        </table>;
+        return this.createTable();
     }
 }
 

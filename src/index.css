@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+Button.keypad-button {
+  width: 50px;
+  height: 50px;
+}
+
+Button.keypad-button-submit {
+  height: 50px;
+  display: block;
+  width: 100%;
+  background-color: green;
+}
+
+Input.display-input {
+  height: 50px;
+}
