@@ -13,14 +13,14 @@ class Keypad extends Component {
             for (let j = 0; j < 3; j++) {
                 children.push(
                     <td>
-                        <Button className="keypad-button" key={number}>{number}</Button>
+                        <Button className="keypad-button" name={number} onClick={e => this.props.onClick(e.target.name)}>{number}</Button>
                     </td>)
                 number++;
             }
 
             children.push(
                 <td>
-                    <Button className="keypad-button operation" key={operations[i]}>{operations[i]}</Button>
+                    <Button className="keypad-button operation" name={operations[i]} onClick={e => this.props.onClick(e.target.name)}>{operations[i]}</Button>
                 </td>)
 
             table.push(<tr>{children}</tr>)
@@ -29,13 +29,13 @@ class Keypad extends Component {
         table.push(
             <tr>
                 <td colSpan="2">
-                    <Button className="keypad-button-submit">=</Button>
+                    <Button className="keypad-button-submit" name="=" onClick={e => this.props.onClick(e.target.name)}>=</Button>
                 </td>
                 <td>
-                    <Button className="keypad-button" key="0">0</Button>
+                    <Button className="keypad-button" name="0" onClick={e => this.props.onClick(e.target.name)}>0</Button>
                 </td>
                 <td>
-                    <Button className="keypad-button operation" key={operations[i]}>{operations[i]}</Button>
+                    <Button className="keypad-button operation" name={operations[i]} onClick={e => this.props.onClick(e.target.name)}>{operations[i]}</Button>
                 </td>
             </tr>)
 
