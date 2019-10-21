@@ -7,25 +7,41 @@ class Calculator extends Component {
         super();
 
         this.state = {
-            result: "",
-
+            result: '',
+            result2: '',
+            operation: ''
         }
     }
 
     onClick = button => {
         if (isNaN(button)) {
-            switch(button)
-            {
-                case '+': alert('plus'); break;
-                case '-': alert('minus'); break;
-                case '*': alert('multi'); break;
-                case '/': alert('div'); break;
-                case '=': alert('sum'); break;
+            switch (button) {
+                case '+': this.setState({ operation: button, result2: this.state.result, result: '' }); break;
+                case '-': this.setState({ operation: button, result2: this.state.result, result: '' }); break;
+                case '*': this.setState({ operation: button, result2: this.state.result, result: '' }); break;
+                case '/': this.setState({ operation: button, result2: this.state.result, result: '' }); break;
+                case '=': this.calculate(); break;
+                case 'c': this.clear(); break;
             }
         }
-        
+        else {
+            this.setState({
+                result: this.state.result + button,
+            })
+        }
+    }
+
+    calculate = () => {
         this.setState({
-            result: this.state.result + button
+            result: (eval(this.state.result2 + this.state.operation + this.state.result) || "")
+        })
+    }
+
+    clear = () => {
+        this.setState({
+            result: '',
+            result2: '',
+            operation: ''
         })
     }
 

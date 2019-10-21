@@ -39,6 +39,14 @@ class Keypad extends Component {
                 </td>
             </tr>)
 
+        table.push(
+            <tr>
+                <td colSpan="4">
+                    <Button className="keypad-button-submit" name="c" onClick={e => this.props.onClick(e.target.name)}>clear</Button>
+                </td>
+            </tr>
+        )
+
         return table;
     }
 
