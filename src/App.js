@@ -1,14 +1,10 @@
 import React, { Component, Fragment } from 'react';
-import Keypad from './Components/Keypad';
-import Display from './Components/Display';
+import Calculator from './Components/Calculator';
 
 class App extends Component {
   render() {
     return <Fragment>
-      <table>
-        <Display />
-        <Keypad />
-      </table>
+      <Calculator />
     </Fragment>;
   }
 }
