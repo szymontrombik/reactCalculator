@@ -26,14 +26,14 @@ class Calculator extends Component {
         }
         else {
             this.setState({
-                result: this.state.result + button,
+                result: (this.state.result + button).replace(/^0+/, ''),
             })
         }
     }
 
     calculate = () => {
         this.setState({
-            result: (eval(this.state.result2 + this.state.operation + this.state.result) || "")
+            result: (eval(this.state.result2.replace(/^0+/, '') + this.state.operation + this.state.result.replace(/^0+/, '')) || "")
         })
     }
 
